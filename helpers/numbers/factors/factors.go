@@ -2,7 +2,7 @@ package factors
 
 import "../primes"
 
-/* Returns all the factors of a number */
+// Returns an array of all the factors of the provided number
 func Factors(num int) []int {
 	factorSlice := []int {1, num}
 	for x := 2; x < int(num / 2) + 1; x++ {
@@ -14,6 +14,7 @@ func Factors(num int) []int {
 	return factorSlice
 }
 
+// Returns an array of all the factors of the provided number that are PRIME
 func PrimeFactors(num int) []int {
 	factorSlice := Factors(num)
 	primeFactorSlice := []int {}

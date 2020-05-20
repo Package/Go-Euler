@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// Returns a single string containing all the data in the file
+// Reads the file at the provided path and returns a string containing the whole files content
 func ReadAllAsString(filePath string) (string, error) {
 
 	handle, err := os.Open(filePath)
@@ -28,7 +28,8 @@ func ReadAllAsString(filePath string) (string, error) {
 	return str, nil
 }
 
-// Returns a slice of strings. Each line in the file is a new entry in the slice.
+// Reads the file at the provided path and returns a slice of strings.
+// Each line in the file is a new entry in the slice.
 func ReadAsStringArray(filePath string) ([] string, error) {
 
 	handle, err := os.Open(filePath)
@@ -48,7 +49,7 @@ func ReadAsStringArray(filePath string) ([] string, error) {
 	return stringData, nil
 }
 
-// Returns the contents of the file parsed into a multi dimensional array.
+// Reads the file at the provided path and returns the contents of the file parsed into a multi dimensional array.
 // Each line is a new entry within the array and then each word separated by space is a new entry within that.
 func ReadAsMultiArray(filePath string) ([][]string, error) {
 

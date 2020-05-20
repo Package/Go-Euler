@@ -6,15 +6,14 @@ import (
 	"strings"
 )
 
+// Returns whether or not a string is considered a palindrome.
+// That is when it reads the same backwards, e.g. "Hannah" or "Bob"
 func Palindrome(s string) bool {
 	halfWay := int(math.Ceil(float64(len(s) / 2)))
-
-	//fmt.Printf("%s is %d characters long. Half way is %d characters long\n", s, len(s), halfWay)
 
 	for x := 0; x <= halfWay; x++ {
 		c1 := s[x]
 		c2 := s[len(s) - (x+1)]
-		//fmt.Printf("Comparing %c and %c\n", c1, c2)
 		if c1 != c2 {
 			return false
 		}
@@ -23,6 +22,8 @@ func Palindrome(s string) bool {
 	return true
 }
 
+// Returns whether or not a int is considered a palindrome.
+// That is when it reads the same backwards, e.g. "9009" or "000000"
 func PalindromeInt(num int) bool {
 	// Convert to a string before falling back to other palindrome func
 	converted := strconv.Itoa(num)
@@ -30,6 +31,7 @@ func PalindromeInt(num int) bool {
 	return Palindrome(converted)
 }
 
+// Sums each individual digit within the provided string and returns the total.
 func SumOfDigits(s string) int {
 	total := 0
 

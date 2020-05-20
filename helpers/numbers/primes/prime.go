@@ -2,7 +2,7 @@ package primes
 
 import "math"
 
-/* Prime number checker */
+// Returns whether or not a number is prime
 func Prime(num int) bool {
 	// Edge cases
 	if num == 2 {
