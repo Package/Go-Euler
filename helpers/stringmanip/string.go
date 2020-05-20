@@ -30,6 +30,20 @@ func PalindromeInt(num int) bool {
 	return Palindrome(converted)
 }
 
+func SumOfDigits(s string) int {
+	total := 0
+
+	for x := 0; x < len(s); x++ {
+		value, err := strconv.Atoi(string(s[x]))
+		if err != nil {
+			panic("Couldn't convert to string")
+		}
+		total += value
+	}
+
+	return total
+}
+
 // Returns the string with all spaces and hyphens stripped out
 func StripSpacesAndHyphens(s string) string {
 	return strings.ReplaceAll(strings.ReplaceAll(s, " ", ""), "-", "")

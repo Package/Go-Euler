@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./helpers/primes"
+	"./helpers/numbers/primes"
 	"fmt"
 	"math"
 )
