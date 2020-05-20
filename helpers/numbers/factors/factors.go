@@ -4,8 +4,21 @@ import "../primes"
 
 // Returns an array of all the factors of the provided number
 func Factors(num int) []int {
-	factorSlice := []int {1, num}
-	for x := 2; x < int(num / 2) + 1; x++ {
+	// Append here is merging the two slices together
+	return append([]int {1, num}, getFactors(num)...)
+}
+
+// Returns an array of all the proper divisors of the provided number
+// This is all the factors of the number, NOT including the number itself
+func ProperDivisors(num int)[] int {
+	return append([]int {1}, getFactors(num)...)
+}
+
+// Internally used to get all the factors of a number (NOT including 1 or the number itself)
+func getFactors(num int) []int {
+	factorSlice := []int {}
+
+	for x := 2; x < num/2+ 1; x++ {
 		if num % x == 0 {
 			factorSlice = append(factorSlice, x)
 		}
@@ -13,6 +26,7 @@ func Factors(num int) []int {
 
 	return factorSlice
 }
+
 
 // Returns an array of all the factors of the provided number that are PRIME
 func PrimeFactors(num int) []int {
