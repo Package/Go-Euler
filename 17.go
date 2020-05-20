@@ -1,8 +1,8 @@
 package main
 
 import (
+	"./helpers/stringmanip"
 	"fmt"
-	"strings"
 )
 
 var NumberMap = map[int]string {
@@ -41,15 +41,11 @@ func writeWord(n int) string {
 	return output
 }
 
-func stripSpacesAndHyphens(s string) string {
-	return strings.ReplaceAll(strings.ReplaceAll(s, " ", ""), "-", "")
-}
-
 func main() {
 
 	totalChars := 0
 	for x := 1; x <= 1000; x++ {
-		totalChars += len(stripSpacesAndHyphens(writeWord(x)))
+		totalChars += len(stringmanip.StripSpacesAndHyphens(writeWord(x)))
 	}
 
 	fmt.Printf("Answer is: %d\n", totalChars)

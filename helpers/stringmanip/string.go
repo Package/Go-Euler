@@ -3,6 +3,7 @@ package stringmanip
 import (
 	"math"
 	"strconv"
+	"strings"
 )
 
 func Palindrome(s string) bool {
@@ -27,4 +28,9 @@ func PalindromeInt(num int) bool {
 	converted := strconv.Itoa(num)
 
 	return Palindrome(converted)
+}
+
+// Returns the string with all spaces and hyphens stripped out
+func StripSpacesAndHyphens(s string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(s, " ", ""), "-", "")
 }
